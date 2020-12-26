@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "5EexOLe0+dydIK8r83/Rbp+1KYiDwGSfl/L4jmStqY8WXSwKiIGwjDk7VTcRkNt3sbtnJxcyCuyI/itZ08qB+g==",
+  "success": true,
+  "projectFilePath": "E:\\Workstation\\Git_Hub_Projects\\ResearchAndDevelopment\\DotNet\\ConsoleApplication\\NinjectDI\\NinjectDI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ih_hi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\ninject\\3.3.4\\ninject.3.3.4.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\ih_hi\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

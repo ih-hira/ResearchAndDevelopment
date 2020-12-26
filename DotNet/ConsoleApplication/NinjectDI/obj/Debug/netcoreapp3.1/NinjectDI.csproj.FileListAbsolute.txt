@@ -1,0 +1,15 @@
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\bin\Debug\netcoreapp3.1\NinjectDI.exe
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\bin\Debug\netcoreapp3.1\NinjectDI.deps.json
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\bin\Debug\netcoreapp3.1\NinjectDI.runtimeconfig.json
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\bin\Debug\netcoreapp3.1\NinjectDI.runtimeconfig.dev.json
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\bin\Debug\netcoreapp3.1\NinjectDI.dll
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\bin\Debug\netcoreapp3.1\NinjectDI.pdb
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\bin\Debug\netcoreapp3.1\Ninject.dll
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.csprojAssemblyReference.cache
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.AssemblyInfoInputs.cache
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.AssemblyInfo.cs
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.csproj.CoreCompileInputs.cache
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.csproj.CopyComplete
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.dll
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.pdb
+E:\Workstation\Git_Hub_Projects\ResearchAndDevelopment\DotNet\ConsoleApplication\NinjectDI\obj\Debug\netcoreapp3.1\NinjectDI.genruntimeconfig.cache
