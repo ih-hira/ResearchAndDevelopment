@@ -54,9 +54,24 @@ namespace ShoppingCart.Test
             var result = controller.CheckOut(cardMock.Object, addressInfoMock.Object) as ObjectResult;
 
             //Assert
-            shipmentServiceMock.Verify(s => s.Ship(addressInfoMock.Object, items), Times.Once);
+            shipmentServiceMock.Verify(s => s.Ship(addressInfoMock.Object, items), Times.Once());
             Assert.AreEqual(StatusCodes.Status200OK, result.StatusCode);
+            Assert.AreEqual("charged", result.Value);
 
+        }
+
+        [Test]
+        public void ShouldReturnNotCharged()
+        {
+            paymentServiceMock.Setup(p => p.Charge(It.IsAny<double>(), cardMock.Object)).Returns(false);
+
+            //Act
+            var result = controller.CheckOut(cardMock.Object, addressInfoMock.Object) as ObjectResult;
+
+            //Assert
+            shipmentServiceMock.Verify(s => s.Ship(addressInfoMock.Object, items), Times.Never());
+            Assert.AreEqual(StatusCodes.Status400BadRequest, result.StatusCode);
+            Assert.AreEqual("not charged", result.Value);
         }
     }
 }
