@@ -6,7 +6,7 @@ namespace AsyncAwait
 {
     class Program
     {
-        static void Main(string[] args)
+        static async void Main(string[] args)
         {
             /*Console.WriteLine("Code 1");
             Thread x = new Thread(SomeMethod);
@@ -15,25 +15,25 @@ namespace AsyncAwait
             Console.Read();*/
 
 
-            /*Task<string> getDataTask = Task.Factory.StartNew(() => { return GetData(); });
+            Task<string> getDataTask = Task.Factory.StartNew(() => { return GetData(); });
             Task<string> processDataTask = getDataTask.ContinueWith((data) => { return ProcessData(data); });
             Task saveDataTask = processDataTask.ContinueWith((pData) => { SaveData(pData); });
-            Task<string> displayDataTask = processDataTask.ContinueWith((pData) => { return CreateDisplayString(pData); });
-            Console.WriteLine(displayDataTask.Result);*/
-            //saveDataTask.Wait();
-
-            /*Task<string> getDataTask = GetDataAsync();
-            Task<string> processDataTask = ProcessDataAsync(getDataTask);
-            _ = SaveDataAsync(processDataTask);
-            Task<string> displayDataTask = CreateDisplayStringAsync(processDataTask);
+            Task<string> displayDataTask = processDataTask.ContinueWith((pData) => { return CreateDisplayString(pData); });*/
             Console.WriteLine(displayDataTask.Result);
+            saveDataTask.Wait();
+
+            Task<string> getDataTaskAsync = GetDataAsync();
+            Task<string> processDataTaskAsync = ProcessDataAsync(getDataTaskAsync);
+            _ = SaveDataAsync(processDataTaskAsync);
+            Task<string> displayDataTaskAsync = CreateDisplayStringAsync(processDataTaskAsync);
+            Console.WriteLine(displayDataTaskAsync.Result);
            
             
-            Console.WriteLine("I am not dependent");*/
-            
-            Console.WriteLine("1");
-            SomeMethod();
             Console.WriteLine("I am not dependent");
+            
+            /*Console.WriteLine("1");
+            SomeMethod();
+            Console.WriteLine("I am not dependent");*/
 
             Console.Read();
         }
