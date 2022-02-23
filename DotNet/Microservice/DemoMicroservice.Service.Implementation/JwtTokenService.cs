@@ -12,7 +12,7 @@ namespace DemoMicroservice.Service.Implementation
     public class JwtTokenService : IJwtTokenService
     {
         private readonly JwtSecurityTokenHandler _tokenHandler;
-        public readonly IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
         private static readonly string secretKey = "GQDstcKsx0NHjPOuXOYg5MbeJ1XT0uFiwDVvVBrk";
         public static readonly SecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
