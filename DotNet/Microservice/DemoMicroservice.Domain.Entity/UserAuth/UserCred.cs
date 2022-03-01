@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DemoMicroservice.Domain.Entity.AuthMicroservice
+namespace DemoMicroservice.Domain.Entity.UserAuth
 {
     public class UserCred
     {

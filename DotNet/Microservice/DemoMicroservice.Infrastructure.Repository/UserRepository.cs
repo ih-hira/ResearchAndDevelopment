@@ -1,50 +1,44 @@
-﻿using DemoMicroservice.Domain.Entity.AuthMicroservice;
+﻿using DemoMicroservice.Domain.Entity.UserAuth;
 using DemoMicroservice.Domain.Interface;
+using DemoMicroservice.Infrastructure.Repository.DAL;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace DemoMicroservice.Infrastructure.Repository
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : BaseRepository<UsersDbContext, User>, IUserRepository
     {
-        private readonly List<User> _users;
-        public UserRepository()
+        public UserRepository(UsersDbContext context) : base(context)
         {
-            _users = new List<User>();
-            _users.Add(new User
-            {
-                Id = "uid_1",
-                Name = "name1",
-                UserName = "username1",
-                Password = "password1",
-                Role="user"
-            });
-            _users.Add(new User
-            {
-                Id = "uid_2",
-                Name = "name2",
-                UserName = "username2",
-                Password = "password2",
-                Role="admin"
-            });
+
         }
         public User GetUserByCred(UserCred userCred)
         {
-            var user = _users.FirstOrDefault(u => u.UserName.Equals(userCred?.Username) && u.Password.Equals(userCred?.Password));
+            var user = _context.Users.FirstOrDefault(u => u.Username.Equals(userCred.Username) && u.Password.Equals(userCred.Password));
             if (user != null)
-                return user;
+                return user as User;
             return new User();
         }
-        public User GetUserByUsername(string id)
+        public User GetUserByUsername(string userName)
         {
-            var user = _users.FirstOrDefault(u => u.Id.Equals(id));
+            var user = _context.Users.FirstOrDefault(u => u.Username.Equals(userName));
             if (user != null)
             {
                 user.Password = "********";
                 return user;
             }
-                
+
+            return new User();
+        }
+        public User GetUserByUserId(int id)
+        {
+            var user = GetById(id);
+            if (user != null)
+            {
+                user.Password = "********";
+                return user;
+            }
+
             return new User();
         }
     }

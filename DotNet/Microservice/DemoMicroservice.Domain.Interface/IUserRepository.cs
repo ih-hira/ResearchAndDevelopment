@@ -1,10 +1,11 @@
-﻿using DemoMicroservice.Domain.Entity.AuthMicroservice;
+﻿using DemoMicroservice.Domain.Entity.UserAuth;
 
 namespace DemoMicroservice.Domain.Interface
 {
-    public interface IUserRepository
+    public interface IUserRepository: IBaseRepository<User>
     {
         public User GetUserByCred(UserCred userCred);
-        public User GetUserByUsername(string id);
+        public User GetUserByUsername(string username);
+        public User GetUserByUserId(int id);
     }
 }

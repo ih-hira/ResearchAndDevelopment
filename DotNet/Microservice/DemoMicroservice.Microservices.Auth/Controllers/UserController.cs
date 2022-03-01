@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DemoMicroservice.Microservices.Users.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     [Authorize]
     public class UserController : ControllerBase
@@ -15,13 +15,13 @@ namespace DemoMicroservice.Microservices.Users.Controllers
             _userRepository = userRepository;
         }
         [HttpGet("UserDetails")]
-        public IActionResult Details(string id)
+        public IActionResult Details(string username)
         {
-            if (string.IsNullOrEmpty(id))
-                return BadRequest(id);
+            if (string.IsNullOrEmpty(username))
+                return BadRequest(username);
 
-            var user = _userRepository.GetUserByUsername(id);
-            if (string.IsNullOrEmpty(user.Id))
+            var user = _userRepository.GetUserByUsername(username);
+            if (string.IsNullOrEmpty(user.Username))
                 return NotFound("User not found");
 
             return Ok(user);

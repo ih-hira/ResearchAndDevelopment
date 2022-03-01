@@ -1,9 +1,11 @@
 using DemoMicroservice.Domain.Interface;
 using DemoMicroservice.Infrastructure.Repository;
+using DemoMicroservice.Infrastructure.Repository.DAL;
 using DemoMicroservice.Service.Implementation;
 using DemoMicroservice.Service.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,8 +27,11 @@ namespace DemoMicroservice.Microservices.Users
         {
             services.AddJwtValidation();
             services.AddControllers();
+
+            services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IJwtTokenService, JwtTokenService>();
+            services.AddScoped<ITokenService, JwtTokenService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DemoMicroservice.Microservices.Auth", Version = "v1" });
