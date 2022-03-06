@@ -1,6 +1,7 @@
 ﻿using DemoMicroservice.Domain.Entity.UserAuth;
 using DemoMicroservice.Domain.Interface;
 using DemoMicroservice.Service.Interface;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace DemoMicroservice.Microservices.Users.Controllers
             _userRepository = userRepository;
         }
 
-        [HttpPost("login")]
+        [HttpPost]
         public IActionResult Login([FromBody] UserCred userCred)
         {
             var user = _userRepository.GetUserByCred(userCred);
@@ -40,7 +41,7 @@ namespace DemoMicroservice.Microservices.Users.Controllers
             user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
             _userRepository.Update();
 
-            return Ok(new
+            return StatusCode(StatusCodes.Status200OK, new
             {
                 AccessToken = accessToken,
                 RefreshToken = refreshToken

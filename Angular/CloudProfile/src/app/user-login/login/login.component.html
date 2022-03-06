@@ -15,10 +15,9 @@
 
     <div class="form-group">
         <label for="password">Password</label><br>
-        <input #password="ngModel" required minlength="8" type="password" name="password" class="form-control" ngModel >   
+        <input #password="ngModel" required type="password" name="password" class="form-control" ngModel >   
         <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
             <p *ngIf="password.hasError('required')">Password required</p>
-            <p *ngIf="password.hasError('minlength')">Minimum length of password is 8</p>
         </div>    
     </div>
     

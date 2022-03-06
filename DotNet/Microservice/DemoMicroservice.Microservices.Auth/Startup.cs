@@ -47,6 +47,7 @@ namespace DemoMicroservice.Microservices.Users
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoMicroservice.Microservices.Auth v1"));
             }
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
