@@ -1,0 +1,32 @@
+<h3>User registration</h3>
+<form [formGroup]="regForm">
+    <div class="form-group">
+        <input type="text" placeholder="First name" formControlName="firstname" class="form-control">
+    </div>
+
+    <pre></pre>
+
+    <div class="form-group">
+        <input type="text" placeholder="Last name" formControlName="lastname" class="form-control">
+    </div>
+
+    <pre></pre>
+    <div formArrayName="addresses">
+        <div class="form-group" *ngFor="let address of addressControls;let i =index">
+            <input type="text" placeholder="Address {{i+1}}" [formControlName]="i" class="form-control">
+        </div>
+        <div>
+            <button type="button" id="addAddress" class="btn btn-light" (click)="addNewAddress()">Add another</button>
+        </div>
+    </div>
+    <pre></pre>
+
+    <div class="form-group">
+        <input type="email" placeholder="Email" formControlName="email" class="form-control">
+        <div *ngIf="email?.touched && email?.invalid" class="alert alert-danger">
+            Email required
+        </div>
+    </div>
+    <a routerLink="/login" routerLinkActive="active" class="btn btn-primary" id="loginBtn">Login</a>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
