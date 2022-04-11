@@ -31,7 +31,9 @@ namespace DemoMicroservice.Microservices.Users
             services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserDetailsRepository, UserDetailsRepository>();
             services.AddScoped<ITokenService, JwtTokenService>();
+            services.AddScoped<IUserDetailsService, UserDetailsService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DemoMicroservice.Microservices.Auth", Version = "v1" });

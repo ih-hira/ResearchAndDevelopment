@@ -1,4 +1,5 @@
-﻿using DemoMicroservice.Domain.Entity.UserAuth;
+﻿using DemoMicroservice.Domain.Entity;
+using DemoMicroservice.Domain.Entity.UserAuth;
 using Microsoft.EntityFrameworkCore;
 
 namespace DemoMicroservice.Infrastructure.Repository.DAL
@@ -10,5 +11,6 @@ namespace DemoMicroservice.Infrastructure.Repository.DAL
 
         }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserDetails> UserDetails { get; set; }
     }
 }

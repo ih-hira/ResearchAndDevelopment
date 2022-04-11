@@ -1,22 +1,17 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { Constants } from 'src/app/config/constants';
+import { UserDetails } from '../view-model/user-details.model';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class LoginService {
-  result: any = null;
+@Injectable()
+export class UserDetailsService {
   apiBaseUrl = Constants.API_BASE_URL;
   constructor(private httpClient: HttpClient) { }
 
-  userLogin(userCred: JSON) {
-    const url = `${this.apiBaseUrl}api/Auth/Login`;
-    return this.httpClient.post(url, userCred).pipe(catchError(this.handleError));
-  }
-  refreshTokenCallBack() {
-    return new Promise((e) => e);
+  getUserByUserName(username: string): Observable<UserDetails> {
+    const url = `${this.apiBaseUrl}api/User/UserDetails/${username}`;
+    return this.httpClient.get<UserDetails>(url).pipe(map((data: UserDetails) => { return data; }), catchError(this.handleError));
   }
   handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
@@ -28,6 +23,9 @@ export class LoginService {
       switch (error.status) {
         case 401:
           errorMessage = "Invalid username or password!!"
+          break;
+        case 400:
+          errorMessage = "User not found"
           break;
         default:
           errorMessage = error.message

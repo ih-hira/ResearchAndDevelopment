@@ -1,4 +1,4 @@
-﻿using DemoMicroservice.Domain.Interface;
+﻿using DemoMicroservice.Service.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,18 +9,18 @@ namespace DemoMicroservice.Microservices.Users.Controllers
     [Authorize]
     public class UserController : ControllerBase
     {
-        public readonly IUserRepository _userRepository;
-        public UserController(IUserRepository userRepository)
+        public readonly IUserDetailsService _userDetailsService;
+        public UserController(IUserDetailsService userDetailsService)
         {
-            _userRepository = userRepository;
+            _userDetailsService = userDetailsService;
         }
-        [HttpGet("UserDetails")]
-        public IActionResult Details(string username)
+        [HttpGet("{username}")]
+        public IActionResult UserDetails(string username)
         {
             if (string.IsNullOrEmpty(username))
                 return BadRequest(username);
 
-            var user = _userRepository.GetUserByUsername(username);
+            var user = _userDetailsService.GetUserDetailsByUsername(username);
             if (string.IsNullOrEmpty(user.Username))
                 return NotFound("User not found");
 
