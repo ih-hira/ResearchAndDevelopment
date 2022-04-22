@@ -1,3 +1,4 @@
+using DemoMicroservice.Service.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +22,7 @@ namespace DemoMicroservice.Microservices.Gateway
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddJwtValidation();
             services.AddOcelot(Configuration);
         }
 

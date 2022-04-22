@@ -12,21 +12,25 @@
       "UpstreamPathTemplate": "/WeatherForecast",
       "UpstreamHttpMethod": [
         "GET"
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
 
     },
     {
-      "DownstreamPathTemplate": "/login",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/Auth/Login",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "4200"
+          "Port": "44320"
         }
       ],
-      "UpstreamPathTemplate": "/userlogin",
+      "UpstreamPathTemplate": "/Login",
       "UpstreamHttpMethod": [
-        "GET"
+        "POST"
       ]
 
     }
