@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { MhnModels } from '../models/mhn.model';
-import { MhnService } from '../services/mhn.service';
+import { MhnModels } from '../../../../models/mhn/mhn.model';
+import { MhnService } from '../../../../services/mhn/mhn.service';
 import { takeUntil } from 'rxjs/operators';
 @Component({
     selector: 'app-mhn-campaign-list',
