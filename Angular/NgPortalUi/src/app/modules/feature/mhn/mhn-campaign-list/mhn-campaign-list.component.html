@@ -1,0 +1,96 @@
+
+
+<div class="col-md-24 mhn_campaign page-content">
+    <div class="common-height">
+        <div class="row card-padding-fixed">
+            <div class="col-md-24">
+                <div class="card no-overflow">
+                    <div class="row">
+                        <div class="col-md-24">
+                            <div id="divMessage" class="message error flipInX animated" style="display:none;">
+                                <span></span>
+                                <a class="close" href="javascript:void(0)"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row filter-row">
+                        <div class="col-md-12">
+                            <h2>{{title}}</h2>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="actions btn-group" style="float: right; margin-left: 15px">
+                                <select class="form-control ng-pristine ng-valid ng-touched">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                </select>
+                            </div>
+                            <a href="/mhn/list" class="in-btn primary-btn pull-right"><i class="fa fa-plus-circle"></i> Create campaign</a>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-24">
+                            <table class="in-table data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Option</th>
+                                        <th>Member count</th>
+                                        <th>Submit date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="ng-scope" *ngFor="let data of DataStore">
+                                        <td>
+                                            <span style="text-transform: capitalize">{{data.Name}}</span>
+                                        </td>
+                                        <td>
+                                            <span class="capitalize-first-letter">{{data.CampaignType}}</span>
+                                        </td>
+                                        <td>
+                                            <span class="capitalize-first-letter">{{data.Option}}</span>
+                                        </td>
+                                        <td>
+                                            {{data.TotalDataCount}}
+                                        </td>
+                                        <td>
+                                            <span class="capitalize-first-letter">{{data.CreatedOn}}</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <!--<tbody>
+                                    <tr>
+                                        <td colspan="7" class="text-center">
+                                            <div class="loader-con">
+                                                <div class="loaderInner">Loading..</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>-->
+                            </table>
+                            <div class="no-data">
+                                Hmm…looks like there is no data to show yet
+                                <i class="icon-sad custom-expresion"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-24 text-right">
+                            <div class="pull-right pagination margin-off list-view">
+                                <span class="h5 deep-grey ng-binding">1 of 100</span>
+                                <button class="h6 border-off" href=""><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></button>
+                                <button class="h6 border-off" href=""><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
