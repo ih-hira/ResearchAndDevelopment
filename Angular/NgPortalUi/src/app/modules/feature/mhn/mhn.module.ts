@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MhnCampaignListComponent } from './mhn-campaign-list/mhn-campaign-list.component';
 import { MhnService } from './services/mhn.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpLocalClientService } from 'src/app/services/http-local-client.service';
+import { HttpLocalClientService } from 'src/app/services/http-service/http-local-client.service';
 
 
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from "../../environments/environment";
+import { environment } from "../../../environments/environment";
+import { LocalStorageHelper } from 'src/app/helpers/local-storage.helper';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,9 +32,10 @@ export class HttpLocalClientService {
     return this.http.delete<T>(this.BASE_URL + url, options);
   }
   private getHeaders<T>(searchObj?: T) {
+
     const headers = new HttpHeaders({
-      // "Content-Type": "application/json",
-      // "Authorization": "bearer " + this.token,
+      "Content-Type": "application/json",
+      "Authorization": "bearer " + LocalStorageHelper.getByKey('jwtToken'),
     });
     let headerObj: any = { headers: headers, reportProgress: true };
     if (searchObj) {

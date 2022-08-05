@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { HttpLocalClientService } from 'src/app/services/http-local-client.service';
+import { HttpLocalClientService } from 'src/app/services/http-service/http-local-client.service';
 import { MhnModule } from '../mhn.module';
 import { MhnModels } from '../models/mhn.model';
 @Injectable()
