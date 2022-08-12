@@ -6,7 +6,6 @@ namespace DemoMicroservice.Microservices.Users.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize]
     public class UserController : ControllerBase
     {
         public readonly IUserDetailsService _userDetailsService;

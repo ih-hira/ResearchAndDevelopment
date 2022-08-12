@@ -22,7 +22,7 @@ namespace DemoMicroservice.Microservices.Users.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] UserCred userCred)
+        public IActionResult Login(UserCred userCred)
         {
             var user = _userRepository.GetUserByCred(userCred);
             if (string.IsNullOrEmpty(user.Username))

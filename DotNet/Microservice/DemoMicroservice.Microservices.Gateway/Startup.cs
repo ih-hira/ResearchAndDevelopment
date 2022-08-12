@@ -1,3 +1,4 @@
+using DemoMicroservice.Service.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +22,8 @@ namespace DemoMicroservice.Microservices.Gateway
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddJwtValidation();
+            services.AddMvc();
             services.AddOcelot(Configuration);
         }
 
@@ -33,13 +36,10 @@ namespace DemoMicroservice.Microservices.Gateway
             }
 
             app.UseRouting();
-            
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
             app.UseOcelot().Wait();
 
