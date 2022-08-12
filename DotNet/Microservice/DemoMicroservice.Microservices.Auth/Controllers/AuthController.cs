@@ -39,7 +39,7 @@ namespace DemoMicroservice.Microservices.Users.Controllers
 
             user.RefreshToken = refreshToken;
             user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
-            _userRepository.Update();
+            //_userRepository.Update();
 
             return StatusCode(StatusCodes.Status200OK, new
             {
