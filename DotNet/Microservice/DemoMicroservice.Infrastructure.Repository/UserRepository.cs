@@ -14,15 +14,16 @@ namespace DemoMicroservice.Infrastructure.Repository
         }
         public User GetUserByCred(UserCred userCred)
         {
-            
-            /*var user = _context.Users.FirstOrDefault(u => u.Username.Equals(userCred.Username) && u.Password.Equals(userCred.Password));
+
+            var user = _context.Users.FirstOrDefault(u => u.Username.Equals(userCred.Username) && u.Password.Equals(userCred.Password));
             if (user != null)
-                return user as User;*/
-            return new User
-            {
-                Username="user1",
-                Role="user"
-            };
+                return user as User;
+            return user;
+            //return new User
+            //{
+            //    Username="user1",
+            //    Role="user"
+            //};
         }
         public User GetUserByUsername(string userName)
         {
